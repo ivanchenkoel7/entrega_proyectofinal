@@ -1,0 +1,290 @@
+
+·{
+
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Times New Roman', Times, serif ;
+    text-decoration: none;
+}
+
+p, h2, h3, ul{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+ul, ol{
+    margin-left: 20px ;
+    margin-bottom: 10px;
+}
+
+body{
+    background-color: #f2f2f2;
+}
+
+
+header{
+    width: 1212px;
+    height: 140px;
+    background-color: #23282B;
+    margin: 0px auto;
+}  
+
+#logotipo{
+    width: 50%;
+    height: 130px;
+    margin: 0 auto;
+    padding-top: 10px;
+
+}
+
+
+
+#logotipo img{
+    display: block;
+    width: 60px;
+    float: left;
+    margin-top: 20px;
+
+}
+
+
+#logotipo h1{
+    display: block;
+    float: left;
+    margin-top: 35px;
+    margin-left: 20px;
+    letter-spacing: 2px;
+    font-weight: 100;
+    color: #9d019d;
+}
+
+nav{
+    width: 1250px;
+    height: 40px;
+    margin: 0 auto;
+    background-color: #1b1e1f;
+    border: 1px solid #333333;
+    box-shadow: 0px 22px 22px gray ;
+    font-size: 17px;
+    
+
+}
+
+nav > ul{
+    list-style: none;
+    text-decoration: none;
+}
+
+nav > ul > li{
+    line-height: 20px;
+    float:left;
+
+}
+
+nav > ul > li > a{
+    display: block;
+    padding-left : 20px;
+    padding-right: 20px;
+    color: white;
+
+}
+nav > ul > li > a:hover{
+    background: #019d13;
+    box-shadow: 0px 0px 5px #333333 inset;
+    color: white;
+    transition: all 300ms;
+
+}
+
+nav > ul > li > ul{
+    display: none;
+    position: absolute;
+    color: white;
+    text-align: center;
+    width: 150px;
+    box-shadow: 0px 2px 2px gray ;
+}
+
+nav > ul > li:hover > ul{
+    display: block;
+    color: white;
+    margin: 0px;
+    list-style: none;
+}
+
+nav > ul > li:hover > ul > li{
+    background: #f2f1f0 ;
+    border-bottom: 1px solid #d6d6d6 ;
+    padding: 8px;
+    line-height: 25px;
+    font-size: 13px;
+    transition: all 300ms;
+
+
+}
+
+nav > ul > li:hover > ul > li a{
+    color: gray;
+    transition: all 300ms;
+}   
+    
+nav > ul > li:hover > ul > li:hover{
+    background-color: #019d13;
+
+}
+
+nav > ul > li:hover > ul > li:hover a{
+    display: block;
+    color: white;
+    
+}
+
+
+
+.barra{
+    width: 1250px;
+    margin: 0 auto;
+    
+}
+
+.esquina-izquierda{
+    display: block;
+    border-left: 20px solid transparent;
+    border-top: 10px solid #2b2f30 ;
+    float:left
+}
+
+.esquina-derecha{
+    display: block;
+    border-right: 20px solid transparent;
+    border-top: 10px solid #2b2f30 ;
+    float:right
+}
+
+.relleno-barra{
+    display: block;
+    width: 1210px;
+    background: #2b2f30 ;
+    height: 10px;
+    float: left;
+
+}
+
+#content{
+    width: 1210px;
+    min-height: 930px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.box{
+    background:white;
+    width: 95%;
+    min-height: 930px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    margin: 0 auto;
+
+}
+
+.box .image{
+    float: left;
+    margin-right: 20px;
+}
+    
+
+.box a{
+    color: #444;
+    }
+
+.box a:hover{
+    transition: all 100ms;
+    color: #019d13;
+}
+
+.box form{
+    width: 50%;
+}
+
+.box form input,
+.box form label{
+    display:block;
+    padding: 5px;
+}
+
+.box form input,[type="text"],
+.box form input,[type="email"],
+.box form input,[type="password"],
+.box form textarea{
+    width: 20%;
+    margin-bottom: 10px;
+    
+
+}
+.box form input[type="submit"]{
+    padding: 10px;
+    margin-top: 10px;
+    background: black;
+    border: 1px solid yellow;
+    color: antiquewhite;
+    transition: 300ms all;
+}
+
+.box form input[type="submit"]:hover{
+    cursor: pointer;
+    background: yellow;
+    transition: 300ms all;
+}
+
+
+.message,
+.alert-success,
+.alert{
+    padding: 20px;
+    background: #11b2b8;
+    color: #ddd;
+    text-align: center;
+    margin-bottom: 10px;
+
+}
+
+.alert-warning{
+    background: rgb(215, 20, 20);
+}
+
+
+.title{
+    color: #444;
+    letter-spacing: 1px;
+    font-size: 30px;
+    margin-bottom: 4px;
+    margin-top: 5px;
+
+}
+
+.date{
+    display: block;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    color: grey;
+}
+
+.content{
+    line-height: 25px;
+}
+
+footer{
+    width: 1250px;
+    background-color: #1b1e1f;
+    border: 1px solid #333333;
+    color:white;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0px 0px 20px gray;
+
+
+}
