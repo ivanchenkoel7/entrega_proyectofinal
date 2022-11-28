@@ -3,6 +3,12 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from mainapp.forms import RegisterForm
 from django.contrib.auth import authenticate, login, logout
+import os
+from django.conf import settings
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
+from django.core.files.storage import default_storage
+from django.core.files.base import ContentFile
 
 
 # Create your views here.
@@ -69,3 +75,4 @@ def login_page(request):
 def logout_user(request):
     logout(request)
     return redirect('login')
+

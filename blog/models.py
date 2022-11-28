@@ -34,3 +34,27 @@ class Article(models.Model):
         return self.title 
     
     
+opciones = [
+        [0, "Informacion"],
+        [1, "opiniones o sugerencias"],
+        [2, "Reclamos"],
+        [3, "Charla general"]
+        ]
+    
+    
+class Contacto(models.Model):
+    name = models.CharField(max_length=100, verbose_name='Nombre')
+    email = models.EmailField()
+    consult_type = models.IntegerField(choices=opciones)
+    mensaje = RichTextField(verbose_name="Mensaje")
+    avisos = models.BooleanField()
+    
+    
+    class Meta:
+        verbose_name = 'Contacto'
+        verbose_name_plural = 'Contactos'
+    
+    def __str__(self):
+        return self.name
+    
+    

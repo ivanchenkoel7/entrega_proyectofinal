@@ -1,0 +1,27 @@
+{% extends 'layouts/layout.html' %}
+
+{% block title %} {{title}} {% endblock %}
+
+{% block content %}
+
+
+<h1>{{mensaje}}</h1>
+<h2> Comunicate con nosotros </h2>
+
+<form action="" class="formulario_contacto" method="POST">
+
+    {% csrf_token %}
+
+    {{ form }}
+
+    <br>
+    <button type="submit" id="btnEnviar" class="button">Enviar</button>
+
+</form>
+
+<table id="tablacontactos">
+
+
+</table>
+
+{% endblock %}

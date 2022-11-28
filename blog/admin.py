@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Article
+from .models import Category, Article, Contacto
 
 class CategoryAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at', )
@@ -7,6 +7,9 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class ArticleAdmin(admin.ModelAdmin):
     readonly_fields = ( 'created_at', 'udapte_at')
+    
+    
+
 
 def save_model(self, request, obj, form, change):
     if not obj.user_id:
@@ -18,4 +21,5 @@ def save_model(self, request, obj, form, change):
 
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Article, ArticleAdmin)
+admin.site.register(Contacto)
 

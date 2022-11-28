@@ -33,6 +33,7 @@
             <li>
                 <a href="{% url 'index' %}">Inicio</a>
             </li>
+
             {% if user.email%}
                 <li>
                     <a href="{% url 'list' %}">Categorias</a>
@@ -43,6 +44,10 @@
                         </li>
                         {% endfor %}
                     </ul>
+
+                    <li>
+                        <a href="{% url 'mensaje' %}">Mensaje</a>
+                    </li>
                 </li>
                 
                 {% for page in pages %}
@@ -55,13 +60,17 @@
                 <li>
                     <a href="{% url 'logout' %}">Cerrar Sesion</a>
                 </li>
-    
+            
+                
+
             
                 {% else %}
 
+            
                 <li>
                     <a href="{% url 'register' %}">Registro</a>
                 </li>
+
                 <li>
                     <a href="{% url 'login' %}">Login</a>
                 </li>

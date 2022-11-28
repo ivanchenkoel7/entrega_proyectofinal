@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 
 from blog.models import Article, Category
+from .forms import ContactoForm
 
 # Create your views here.
 
@@ -34,3 +35,21 @@ def article(request, article_id):
     return render(request, 'articles/detail.html', {
         'article': article
     })
+    
+    
+    
+def contacto(request):
+    data= {
+        'form': ContactoForm()
+        }
+    
+    if request.method == 'POST':
+        formulario = ContactoForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "Mensaje enviado"
+        else:
+            data["form"] = formulario
+        
+    
+    return render(request, 'contacto/contacto.html', data)
