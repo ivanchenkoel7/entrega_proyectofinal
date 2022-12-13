@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 class Category(models.Model):
     name = models.CharField(max_length=100, verbose_name='Nombre')
     description = models.CharField(max_length=255, verbose_name='Descripcion' )
+    order = models.IntegerField(default=0, verbose_name="Orden")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Creado')
     
     class Meta:
@@ -19,7 +20,7 @@ class Category(models.Model):
 class Article(models.Model):
     title= models.CharField(max_length=50, verbose_name="Titulo")
     content= RichTextField(verbose_name="Contenido")
-    image= models.ImageField(default='null', verbose_name='Imagen', upload_to="articles" )
+    image= models.ImageField(default='null', verbose_name='Imagen', upload_to="articles/" )
     public= models.BooleanField(verbose_name='Publicado?')
     user= models.ForeignKey(User, verbose_name='Usuario', on_delete=models.CASCADE)
     categories= models.ManyToManyField(Category, verbose_name='Categorias', blank=True)
@@ -58,3 +59,8 @@ class Contacto(models.Model):
         return self.name
     
     
+class Avatar(models.Model):
+    
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    
+    imagen = models.ImageField(upload_to='images/', null=True, blank=True)

@@ -5,24 +5,27 @@
 <head>
     <meta charset="utf-8" />
     <title>
+        Usted esta en:
         {% block title %}
 
         {% endblock %}
 
-        Sitio Web powered by Django
+        
     </title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
 
 </head>
 
 <body>
+    
+    
 
     <header>
         <div id="logotipo">
 
             <img src="{% static 'images/logo.png' %}" />
 
-            <h1>Sitio web powered by Django </h1>
+            <h1>Camino al Yomotsu Hirasaka </h1>
 
         </div>
 
@@ -39,9 +42,9 @@
                     <a href="{% url 'list' %}">Categorias</a>
                     <ul>
                         {% for category in categories %}
-                        <li>
-                            <a href="{% url 'category' category.0 %}">{{category.1}}</a>
-                        </li>
+                            <li>
+                                <a href="{% url 'category' category.0 %}">{{category.1}}</a>
+                            </li>
                         {% endfor %}
                     </ul>
 
@@ -95,9 +98,12 @@
 
         </div>
 
-        <footer>
-                proyecto final &copy; Ivan Garay   {% now "d/m/Y" %}
-            </footer>
+    
+    
+
+    <footer>
+        proyecto final &copy; Ivan Garay   {% now "d/m/Y" %}
+    </footer>
 
 </body>
 

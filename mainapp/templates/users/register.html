@@ -4,9 +4,11 @@
 
 
 {% block content %}
-    
 
-    {{register_form.errors}}
+
+{{register_form.errors}}
+
+
 
 
 <div class="estilo-registro">
@@ -14,14 +16,15 @@
 
 </div>
 
+
 <div class="register-box">
     <form method="post" action="">
         {% csrf_token %}
 
         {% for field in register_form %}
-            <label>{{field.label}}</label>
-            {{field}}
-        
+        <label>{{field.label}}</label>
+        {{field}}
+
         {% endfor %}
 
         <a>
@@ -34,4 +37,3 @@
     </form>
 </div>
 {% endblock %}
-

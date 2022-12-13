@@ -1,21 +1,38 @@
+
+
+{% block content %}
+
 {% for article in articles %}
+
+<hr>
 <article class= "article-item">
     {% if article.image != 'null' and article.image.url|length >= 1 %}
-
+    
         <div class="image">
-            <img src="{{article.image.url}}" />
+            <img src="{{article.image.url}}">
         </div>
     {% endif %}
 
     <div class="data">
         <h2>
-            <a href="{% url 'article' article.id %}"> 
-                {{article.title}}
-            <a/>
+                    <a href="{% url 'article' article.id %}"> 
+                            {{article.title}}
+                    </a>
+                    <br>
+                    
         </h2>
         <p>
             {% for category in article.categories.all%}
-            <a href="#">{{category}}</a>
+            
+                <a href="#">{{category}}</a>
+                <br>
+                <div class="botonesh">
+                <a href="{% url 'modificar_article' article.id %}">Modificar</a>
+                <br>
+                
+                <a href="{% url 'eliminar_article' article.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+                </div>
+            
             {% endfor %}
         
 
@@ -27,5 +44,7 @@
 
 
     <div class="clearfix"></div>
+</ul>
 <article>
     {% endfor %}
+{% endblock %}

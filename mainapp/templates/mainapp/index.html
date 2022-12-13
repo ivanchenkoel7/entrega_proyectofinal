@@ -4,7 +4,88 @@
 
 
 {% block content %}
-    <h1>{{title}}</h1>
+
+
+
+{% if request.user.is_authenticated %}
+
+
+
+
+
+
+    <div class="index_box">
+        <strong><h1> Bienvenido {{request.user.first_name}}</h1></strong>
+        <div class="logotin">
+            <a id="avatar-btn" class="nav-link" href="{% url 'AgregarAvatar' %}">
+                <img id="img" class="img rounded-circle" alt="Perfil" height="40" width="40" img src="{{url}}" alt="avatar" >
+        </div>
+        <hr>
+        <div class="mensajito">
+            <h3> *Ayudanos a seguir creciendo*</h3>
+            <hr>
+            <h4> Utiliza el panel de la derecha para seguir creando ---></h4>
+        </div>
+
+    </div>
+
+    <div class="index_leftbox">
+        <h1>Escucha el llamado de <br> Athena</h1>
+        <hr>
+        <h3>Hagamos que este sea el mejor sitio de los santos de Athena</h3>
+
+
+    </div>
+
+
+<aside>
+    <div class="cosmos">
+        <div class="cuadro1">
+            <div class="subcuadro1">
+                <marquee bgcolor=#454545 behavior="scroll" direction="left">Enciende tu cosmos Caballero</marquee>
+            </div>
+        </div>
+
+        <div class="cuadro2">
+            <div class="elecciones">
+            <h4>
+                Agrega un Caballero
+            </h4>
+                <form>
+                    <a href="{% url 'Articulo' %}">
+                        <input type="button" value="Caballero">
+                    </a>
+                </form>
+            </div>
+
+            <div class="subcuadro2">
+            
+            </div>
+        </div>
+        
+        
+        <div class="cuadro3">
+
+            <div class="asunciones">
+                <h4>
+                    Agrega una Categoria
+                </h4>
+                <form>
+                    <a href="{% url 'Categoria' %}">
+                        <input type="button" value="Categoria">
+                    </a>
+                </form>
+            </div>
+            <div class="subcuadro3">
+            </div>
+        </div>
+
+
+    </div>
+    
+
+</aside>
+{% endif %}
 
     {% if messages %}
         {% for message in messages %}
@@ -14,14 +95,27 @@
         {% endfor %}
     {% endif %}
 
+    {% if user.email %} 
 
-    {% if user.email %}    
-        <h2> Bienvenido {{request.user.first_name}} {{user.last_name}} </h2>
-        <p>
-            {{user.email}}
-        </p>
+
+    <div class="Saludo">  
+    <marquee bgcolor=#454545 behavior="scroll" direction="left"><h1>Despierta el septimo sentido
+            {{request.user.first_name}} {{user.last_name}}</h1></marquee>
+
+                    
+    </div>
+    
+    <div class="index_visual">
+    
+    </div>      
     {% else %}
-        <h2>Identificate para ver mas contenido </h2>
+    <div class="Identificate">
+        <marquee bgcolor=#454545 behavior="scroll" direction="left"><h1>Identificate para ver mas contenido </h1></marquee> 
+    </div>
+        
     {% endif %}
+
+    
+    
 
 {% endblock %}

@@ -4,12 +4,20 @@
 
 
 {% block content %}
-<h1 class="title">{{page.title}}</h1>
 
-<span class="date">{{page.created_at}}</span>
+<marquee bgcolor= #FAFDD1 behavior="scroll" direction="left"><h1 style="color:#9677B8 ;">{{page.title}}</h1></marquee>
 
-<p class="content"> 
-    {{page.content|safe}}
-</p>
 
-{% endblock %}+
+    <div class="imagen_redonda">
+            
+        </div>
+    <div class="about_box">
+        
+        <p class="content"> 
+        {{page.content|safe}}
+        </p>
+    </div>>
+
+    
+
+{% endblock %}

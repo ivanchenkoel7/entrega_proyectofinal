@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Article, Contacto
+from .models import Category, Article, Contacto, Avatar
 
 class CategoryAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at', )
@@ -22,4 +22,5 @@ def save_model(self, request, obj, form, change):
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Contacto)
+admin.site.register(Avatar)
 

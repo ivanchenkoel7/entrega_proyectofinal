@@ -1,0 +1,35 @@
+{% extends 'layouts/layout.html' %}
+
+{% block title %} {{title}} {% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+<div class="avatar-box">
+    <h3>{{mensaje}}</h3>
+    <h2>cargar imagen Avatar </h2>
+
+    <form method="POST" enctype="multipart/form-data">
+
+
+    {% csrf_token %}
+
+    {{ miFormulario.as_p }}
+    
+
+    <a>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <input type="submit" value="Cargar" />
+    </a>
+
+    </form>
+
+</div>
+{% endblock %}
