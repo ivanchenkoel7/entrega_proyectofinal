@@ -16,26 +16,16 @@ from mainapp.forms import RegisterForm
 # Create your views here.
 
 def index(request):
-    imagenes = Avatar.objects.filter(user=request.user.id)
     return render(request, 'mainapp/index.html', {
         'title': 'Inicio',
-        'url': imagenes[0].imagen.url,
-        
+    
     })
     
     
 def avatar(request):
-    
-    if request.method == 'POST':
-        miFormulario = AvatarForm(request.POST, request.FILES)
-        if miFormulario.is_valid:
-            u = User.objects.get(username=request.user)
-            avatar = Avatar (user = u, imagen=miFormulario.cleaned_data['imagen']) 
-            miFormulario.save()
-        return render(request, 'mainapp/index.html')
-    else:
-        miFormulario= AvatarForm()
-        return render(request, 'users/avatar.html',  {"miFormulario": miFormulario})
+    imagenes = Avatar.objects.filter(user=request.user.id)
+    return render(request, 'mainapp/index.html', {
+    'url': imagenes[0].imagen.url})
 
 
 def about(request):
